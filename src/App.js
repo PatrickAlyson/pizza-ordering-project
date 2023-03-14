@@ -1,9 +1,28 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import Base from "./components/Base";
+import Toppings from "./components/Toppings";
+import Order from "./components/Order";
+import Home from "./components/Home";
+
+const router = createBrowserRouter([
+  { path: "/base", element: <Base /> },
+  {
+    path: "/toppings",
+    element: <Toppings />,
+  },
+  {
+    path: "/order",
+    element: <Order />,
+  },
+  {
+    path: "/",
+    element: <Home />,
+  },
+]);
+
 function App() {
-  return (
-    <div>
-      <h1>App</h1>
-    </div>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
 export default App;
