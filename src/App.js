@@ -11,7 +11,7 @@ function App() {
   const [pizza, setPizza] = useState({ base: "", toppings: [] });
 
   const addBase = (base) => {
-    setPizza({ ...pizza, base });
+    setPizza({ ...pizza, base: base });
   };
 
   const addTopping = (topping) => {
@@ -30,7 +30,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="order" element={<Order pizza={pizza} />} />
           <Route
             path="base"
             element={<Base addBase={addBase} pizza={pizza} />}
@@ -40,6 +39,7 @@ function App() {
             path="toppings"
             element={<Toppings addTopping={addTopping} pizza={pizza} />}
           />
+          <Route path="order" element={<Order pizza={pizza} />} />
         </Routes>
       </BrowserRouter>
     </>
