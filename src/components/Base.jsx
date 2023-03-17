@@ -18,6 +18,7 @@ const Base = ({ addBase, pizza }) => {
       variants={containerBaseVariants}
       initial="hidden"
       animate="show"
+      exit="exit"
     >
       <h3>Step 1: Choose Your Base</h3>
       <ul>

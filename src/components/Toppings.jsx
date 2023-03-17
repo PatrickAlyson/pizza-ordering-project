@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import {
   listHoverVariants,
   buttonHoverVariants,
-  containerBaseVariants,
+  containerToppingsVariants,
 } from "../utils/motion";
 
 const Toppings = ({ addTopping, pizza }) => {
@@ -21,9 +21,10 @@ const Toppings = ({ addTopping, pizza }) => {
   return (
     <motion.div
       className="toppings container"
-      variants={containerBaseVariants}
+      variants={containerToppingsVariants}
       initial="hidden"
       animate="show"
+      exit="exit"
     >
       <h3>Step 2: Choose Toppings</h3>
       <ul>
