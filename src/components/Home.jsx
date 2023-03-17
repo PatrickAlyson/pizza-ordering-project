@@ -1,14 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { buttonHoverVariants, homeVariants } from "../utils/motion";
 
 const Home = () => {
   return (
-    <div className="home container">
-      <h2>Welcome to Pizza Joint</h2>
+    <motion.div
+      className="home container"
+      variants={homeVariants}
+      initial="hidden"
+      animate="show"
+    >
+      <motion.h2>Welcome to Pizza Joint</motion.h2>
       <Link to="/base">
-        <button>Create Your Pizza</button>
+        <motion.button variants={buttonHoverVariants} whileHover="whileHover">
+          Create Your Pizza
+        </motion.button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

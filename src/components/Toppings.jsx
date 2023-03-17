@@ -1,5 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+import {
+  listHoverVariants,
+  buttonHoverVariants,
+  containerBaseVariants,
+} from "../utils/motion";
 
 const Toppings = ({ addTopping, pizza }) => {
   let toppings = [
@@ -12,23 +19,35 @@ const Toppings = ({ addTopping, pizza }) => {
   ];
 
   return (
-    <div className="toppings container">
+    <motion.div
+      className="toppings container"
+      variants={containerBaseVariants}
+      initial="hidden"
+      animate="show"
+    >
       <h3>Step 2: Choose Toppings</h3>
       <ul>
         {toppings.map((topping) => {
           let spanClass = pizza.toppings.includes(topping) ? "active" : "";
           return (
-            <li key={topping} onClick={() => addTopping(topping)}>
+            <motion.li
+              variants={listHoverVariants}
+              whileHover="whileHover"
+              key={topping}
+              onClick={() => addTopping(topping)}
+            >
               <span className={spanClass}>{topping}</span>
-            </li>
+            </motion.li>
           );
         })}
       </ul>
 
       <Link to="/order">
-        <button>Order</button>
+        <motion.button variants={buttonHoverVariants} whileHover="whileHover">
+          Order
+        </motion.button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

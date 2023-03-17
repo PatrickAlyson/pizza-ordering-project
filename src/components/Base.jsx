@@ -1,31 +1,54 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+import {
+  containerBaseVariants,
+  nextBaseVariants,
+  buttonHoverVariants,
+  listHoverVariants,
+} from "../utils/motion";
 
 const Base = ({ addBase, pizza }) => {
   const bases = ["Classic", "Thin & Crispy", "Thick Crust"];
 
   return (
-    <div className="base container">
+    <motion.div
+      className="base container"
+      variants={containerBaseVariants}
+      initial="hidden"
+      animate="show"
+    >
       <h3>Step 1: Choose Your Base</h3>
       <ul>
         {bases.map((base) => {
           let spanClass = pizza.base === base ? "active" : "";
           return (
-            <li key={base} onClick={() => addBase(base)}>
+            <motion.li
+              key={base}
+              onClick={() => addBase(base)}
+              variants={listHoverVariants}
+              whileHover="whileHover"
+            >
               <span className={spanClass}>{base}</span>
-            </li>
+            </motion.li>
           );
         })}
       </ul>
 
       {pizza.base && (
-        <div className="next">
+        <motion.div className="next" variants={nextBaseVariants}>
           <Link to="/toppings">
-            <button>Next</button>
+            <motion.button
+              variants={buttonHoverVariants}
+              whileHover="whileHover"
+            >
+              Next
+            </motion.button>
           </Link>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 
