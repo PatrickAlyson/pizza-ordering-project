@@ -1,20 +1,22 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
+import styles from "../styles/Order.module.css";
+
 import { containerOrderVariants, childVariants } from "../utils/motion";
 
 const Order = ({ pizza, setShowModal }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowModal(true);
-    }, 5000);
+    }, 3000);
 
     return () => clearTimeout(timeout);
   }, [setShowModal]);
 
   return (
     <motion.div
-      className="container order"
+      className={styles.container}
       variants={containerOrderVariants}
       initial="hidden"
       animate="show"

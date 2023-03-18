@@ -99,7 +99,8 @@ export const listHoverVariants = {
   whileHover: {
     scale: 1.3,
     originX: 0,
-    color: "#f8e112",
+    // color: "#f8e112",
+    color: "rgb(248,225,18)",
     transition: { type: "spring", stiffness: 300 },
   },
 };
@@ -131,5 +132,32 @@ export const modalVariants = {
     y: "200px",
     opacity: 1,
     transition: { delay: 0.5 },
+  },
+};
+
+export const svgVariances = {
+  hidden: {
+    rotate: -180,
+  },
+  show: {
+    rotate: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+};
+
+export const pathVariants = {
+  hidden: {
+    opacity: 0,
+    pathLength: 0,
+  },
+  show: {
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 2,
+      ease: "easeInOut",
+    },
   },
 };

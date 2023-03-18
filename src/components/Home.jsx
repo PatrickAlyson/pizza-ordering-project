@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { buttonHoverVariants, containerHomeVariants } from "../utils/motion";
 
+import styles from "../styles/Home.module.css";
+
 const Home = () => {
   return (
     <motion.div
-      className="home container"
+      className={styles.container}
       variants={containerHomeVariants}
       initial="hidden"
       animate="show"

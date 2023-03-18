@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import styles from "../styles/Base.module.css";
+
 import {
   containerBaseVariants,
   nextBaseVariants,
@@ -14,7 +16,7 @@ const Base = ({ addBase, pizza }) => {
 
   return (
     <motion.div
-      className="base container"
+      className={styles.container}
       variants={containerBaseVariants}
       initial="hidden"
       animate="show"
@@ -38,7 +40,7 @@ const Base = ({ addBase, pizza }) => {
       </ul>
 
       {pizza.base && (
-        <motion.div className="next" variants={nextBaseVariants}>
+        <motion.div variants={nextBaseVariants}>
           <Link to="/toppings">
             <motion.button
               variants={buttonHoverVariants}

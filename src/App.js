@@ -31,8 +31,8 @@ function App() {
   return (
     <>
       <Header />
-      <Modal showModal={showModal} setShowModal={setShowModal} />
-      <AnimatePresence mode="wait">
+      <Modal showModal={showModal} setPizza={setPizza} />
+      <AnimatePresence mode="wait" onExitComplete={() => setShowModal(false)}>
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Home />} />
           <Route

@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import styles from "../styles/Toppings.module.css";
+
 import {
   listHoverVariants,
   buttonHoverVariants,
@@ -20,7 +22,7 @@ const Toppings = ({ addTopping, pizza }) => {
 
   return (
     <motion.div
-      className="toppings container"
+      className={styles.container}
       variants={containerToppingsVariants}
       initial="hidden"
       animate="show"
